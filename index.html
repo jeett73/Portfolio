@@ -326,14 +326,14 @@
                 <p class="text-xs text-zinc-500 dark:text-zinc-400 mt-1">Records Handled</p>
               </div>
               <div>
-                <p class="font-display font-bold text-3xl text-zinc-900 dark:text-white">10M+</p>
-                <p class="text-xs text-zinc-500 dark:text-zinc-400 mt-1">Daily Data Points</p>
+                <p class="font-display font-bold text-3xl text-zinc-900 dark:text-white">7+</p>
+                <p class="text-xs text-zinc-500 dark:text-zinc-400 mt-1">Projects</p>
               </div>
             </div>
           </div>
 
           <div class="reveal d2 flex justify-center md:justify-end">
-            <div class="relative w-72 h-72 md:w-80 md:h-80 lg:w-96 lg:h-96">
+            <div class="relative w-72 h-72 md:w-80 lg:w-96 lg:h-96">
               <div class="pf w-full h-full rounded-13xl">
                 <img src="jeet_patel.png" alt="Jeet Patel" loading="eager">
               </div>
@@ -415,9 +415,9 @@
         <div class="grid md:grid-cols-2 gap-6">
 
           <article
-            class="card-h reveal d1 group rounded-2xl overflow-hidden bg-zinc-100 dark:bg-zinc-900 border border-zinc-100 dark:border-zinc-800 hover:border-accent md:row-span-2">
-            <div class="pf w-full h-64 md:h-80">
-              <img src="lifemaan.jpeg" alt="LifeMan healthcare document platform" loading="lazy">
+            class="card-h reveal d1 group rounded-2xl overflow-hidden bg-zinc-100 dark:bg-zinc-900 border border-zinc-100 dark:border-zinc-800 hover:border-accent">
+            <div class="pf w-full h-64">
+              <img src="lifemaan.jpeg" alt="LifeMaan healthcare document platform" loading="lazy">
             </div>
             <div class="p-7">
               <div class="flex flex-wrap gap-2 mb-4">
@@ -430,8 +430,7 @@
                   APIs</span>
               </div>
               <div>
-                <h3 class="font-display font-bold text-2xl text-zinc-900 dark:text-white mb-2">LifeMan Healthcare
-                  Document Platform</h3>
+                <h3 class="font-display font-bold text-2xl text-zinc-900 dark:text-white mb-2">LifeMaan</h3>
               </div>
               <p class="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed mb-5">Built backend APIs for a
                 paperless hospital management system supporting digital IPD and OPD records across mobile and web
@@ -446,8 +445,8 @@
 
           <article
             class="card-h reveal d2 group rounded-2xl overflow-hidden bg-zinc-100 dark:bg-zinc-900 border border-zinc-100 dark:border-zinc-800 hover:border-accent">
-            <div class="pf w-full h-48">
-              <img src="daily-card.jpeg" height="10" width="10" alt="Lead Hunter search system" loading="lazy">
+            <div class="pf w-full">
+              <img src="lead_hunter.png" height="10" width="10" alt="Lead Hunter search system" loading="lazy">
             </div>
             <div class="p-6">
               <div class="flex flex-wrap gap-2 mb-3">
@@ -469,7 +468,7 @@
 
           <article
             class="card-h reveal d3 group rounded-2xl overflow-hidden bg-zinc-100 dark:bg-zinc-900 border border-zinc-100 dark:border-zinc-800 hover:border-accent">
-            <div class="pf w-full h-48">
+            <div class="pf w-full">
               <img src="mario-towing.jpeg" alt="Mario Towing Service" loading="lazy">
             </div>
             <div class="p-6">
@@ -486,6 +485,32 @@
                 backend for a vehicle towing platform with request management, live GPS tracking, driver assignment, and
                 payment processing. Containerized services with Docker, routed traffic through NGINX, and integrated
                 WebSocket communication, SMS notifications, and payment links for real-time trip updates.</p>
+            </div>
+          </article>
+
+          <article
+            class="card-h reveal d4 group rounded-2xl overflow-hidden bg-zinc-100 dark:bg-zinc-900 border border-zinc-100 dark:border-zinc-800 hover:border-accent">
+            <div class="pf w-full">
+              <img src="ima.png" alt="Market Analysis Engine predictive stock analytics" loading="lazy">
+            </div>
+            <div class="p-6">
+              <div class="flex flex-wrap gap-2 mb-3">
+                <span
+                  class="text-xs bg-orange-50 dark:bg-zinc-800 text-accent border border-orange-200 dark:border-zinc-700 px-3 py-1 rounded-full">Analytics</span>
+                <span
+                  class="text-xs bg-zinc-200 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-400 px-3 py-1 rounded-full">Machine Learning</span>
+                <span
+                  class="text-xs bg-zinc-200 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-400 px-3 py-1 rounded-full">InfluxDB</span>
+              </div>
+              <div>
+                <h3 class="font-display font-bold text-xl text-zinc-900 dark:text-white mb-1.5">Market Analysis Engine
+                </h3>
+              </div>
+              <p class="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed mb-4">Built a high-throughput
+                analytics backend processing 10M+ daily market data points for stock trend analysis and predictive
+                insights. Integrated pre-trained Python machine learning models to evaluate fundamentals, technical
+                indicators, and historical price patterns for symbol-based forecasting. Designed a low-latency REST API
+                layer with optimized caching to serve concurrent prediction requests efficiently.</p>
             </div>
           </article>
 
@@ -603,7 +628,7 @@
             </div>
 
             <div class="reveal d2">
-              <form @submit="submitWhatsApp" novalidate>
+              <form @submit="submitEmail" novalidate>
                 <div class="flex flex-col gap-4">
                   <div class="grid sm:grid-cols-2 gap-4">
                     <div>
@@ -692,24 +717,35 @@
           }
         },
 
-        submitWhatsApp(e) {
+        submitEmail(e) {
           e.preventDefault();
           const form = e.target;
-          const name = form.name.value;
-          const email = form.email.value;
-          const subject = form.subject.value;
-          const message = form.message.value;
+          const name = form.name.value.trim();
+          const email = form.email.value.trim();
+          const subject = form.subject.value.trim() || 'Portfolio inquiry';
+          const message = form.message.value.trim();
 
           if (!name || !email || !message) {
             alert('Please fill out all required fields.');
             return;
           }
 
-          let text = `Hi Jeet, my name is ${name} (${email}).`;
-          if (subject) text += `\n\nSubject: ${subject}`;
-          text += `\n\n${message}`;
+          if (!form.email.checkValidity()) {
+            alert('Please enter a valid email address.');
+            return;
+          }
 
-          window.open(`https://wa.me/919327961569?text=${encodeURIComponent(text)}`, '_blank');
+          const body = [
+            `Hi Jeet,`,
+            ``,
+            message,
+            ``,
+            `From: ${name}`,
+            `Reply email: ${email}`
+          ].join('\n');
+
+          window.location.href =
+            `mailto:jeet22522410@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
         }
       }
     }
