@@ -272,6 +272,16 @@
             class="block text-zinc-700 dark:text-zinc-300 hover:text-accent transition-colors">About</a></li>
         <li><a href="#contact" @click="mm=false"
             class="block text-zinc-700 dark:text-zinc-300 hover:text-accent transition-colors">Contact</a></li>
+        <li>
+          <a href="Jeet_Patel_Nodejs_CV.pdf" download="Jeet_Patel_Nodejs_CV.pdf" @click="mm=false"
+            class="flex items-center gap-2 text-zinc-700 dark:text-zinc-300 hover:text-accent transition-colors">
+            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M12 3v12m0 0l-4-4m4 4l4-4M5 21h14" />
+            </svg>
+            Download CV
+          </a>
+        </li>
         <li class="pt-2 border-t border-zinc-100 dark:border-zinc-900">
           <a href="#contact" @click="mm=false"
             class="inline-flex shimmer bg-accent text-white font-medium text-sm px-5 py-2.5 rounded-full">Hire me →</a>
@@ -312,9 +322,16 @@
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
                 </svg>
               </a>
-              <a href="#contact"
-                class="inline-flex items-center gap-2 border border-zinc-300 dark:border-zinc-700 text-zinc-700 dark:text-zinc-300 font-medium px-7 py-3.5 rounded-full hover:bg-zinc-50 dark:hover:bg-zinc-900 transition-colors text-sm">Get
-                in touch</a>
+              <a href="Jeet_Patel_Nodejs_CV.pdf" download="Jeet_Patel_Nodejs_CV.pdf"
+                aria-label="Download Jeet Patel's CV as a PDF"
+                class="group inline-flex items-center gap-2 border border-zinc-300 dark:border-zinc-700 text-zinc-700 dark:text-zinc-300 font-medium px-7 py-3.5 rounded-full hover:border-accent hover:text-accent hover:bg-orange-50/70 dark:hover:bg-zinc-900 transition-colors text-sm">
+                Download CV
+                <svg class="w-4 h-4 transition-transform group-hover:translate-y-0.5" fill="none" viewBox="0 0 24 24"
+                  stroke="currentColor" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M12 3v12m0 0l-4-4m4 4l4-4M5 21h14" />
+                </svg>
+              </a>
             </div>
             <div class="reveal d4 flex gap-8 mt-14 pt-8 border-t border-zinc-100 dark:border-zinc-900">
               <div>
